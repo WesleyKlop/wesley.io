@@ -17,7 +17,7 @@
   }
 }
 
-.dark-theme {
+:root.dark-theme {
   --theme-color: #{$theme-color-dark};
   --text-color: #{$text-color-dark};
   --background-color: #{$background-color-dark};
