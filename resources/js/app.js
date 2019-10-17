@@ -1,5 +1,6 @@
 // Map items to year => element
 import Rotator from './components/Rotator'
+import ThemeToggle from './components/ThemeToggle'
 
 const timelineItems = [...document.querySelectorAll('.timeline__item')].reduce(
   (acc, curr) => ({ ...acc, [curr.dataset.year]: curr }),
@@ -24,3 +25,4 @@ Object.values(timelineButtons).forEach(el =>
 )
 
 new Rotator(document.querySelector('.rotator'), ['software developer', 'student', 'frontender', 'nerd'])
+ThemeToggle.initAll()

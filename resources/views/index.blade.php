@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Wesley Klop</title>
+  <meta name="description" content="The website of a software developer."/>
 
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
@@ -24,5 +25,7 @@
 </main>
 
 @include('sections.footer')
+
+@include('components.theme-toggle')
 </body>
 </html>

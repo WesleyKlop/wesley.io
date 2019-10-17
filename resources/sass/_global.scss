@@ -17,6 +17,13 @@
   }
 }
 
+.dark-theme {
+  --theme-color: #{$theme-color-dark};
+  --text-color: #{$text-color-dark};
+  --background-color: #{$background-color-dark};
+  --card-background-color: #{$card-background-color-dark};
+}
+
 * {
   box-sizing: border-box;
 }
