@@ -7,6 +7,7 @@
   --card-background-color: #{$card-background-color};
 }
 
+//noinspection CssInvalidMediaFeature
 @media(prefers-color-scheme: dark) {
   :root:not(.light-theme) {
     --theme-color: #{$theme-color-dark};
@@ -42,7 +43,7 @@ body {
 .title {
   //text-transform: uppercase;
   text-align: left;
-  font-family: 'Roboto Slab', serif;
+  font-family: 'Nunito', sans-serif;
   margin: 4px 0;
   color: var(--theme-color);
   font-weight: bold;
