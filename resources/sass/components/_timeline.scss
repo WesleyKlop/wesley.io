@@ -1,0 +1,49 @@
+@import '../variables';
+
+.timeline {
+  &__title {
+  }
+
+  &__header {
+    text-align: center;
+    padding: 8px;
+  }
+
+  &__button {
+    text-decoration: none;
+    color: inherit;
+    padding: 4px 8px;
+
+    &.active {
+      font-weight: bold;
+      font-size: 1.1em;
+      color: var(--theme-color);
+    }
+  }
+
+  &__content {
+    padding: 16px 0;
+  }
+
+  &__item {
+    display: none;
+    max-width: 900px;
+    margin: auto;
+    background-color: var(--card-background-color);
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
+    &.visible {
+      display: block;
+    }
+
+    .title {
+      text-align: left;
+    }
+
+    p {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+// Vendor
+@import url('https://fonts.googleapis.com/css?family=Roboto|Poppins&display=swap&subset=latin-ext');
+@import '~normalize.css/normalize.css';
+// Global styles
+@import 'global';
+// Components / Sections
+@import 'components/header';
+@import 'components/sections';
+@import 'components/timeline';
+@import 'components/rotator';
+@import 'components/projects';
+@import 'components/skills';
+@import 'components/footer';
