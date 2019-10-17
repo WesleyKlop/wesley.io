@@ -11,7 +11,7 @@
       'source' => 'https://github.com/WesleyKlop/ipsen5',
   ])
   @include('components.projects-item', [
-    'title' => 'This website',
+    'title' => 'wesley.io',
     'front' => '<p>The site you\'re looking at right now! Designed and made by myself using Laravel. It really helped me better
     my design skills and I think it looks great!</p>',
     'tech' => ['Laravel', 'SCSS', 'JavaScript', 'Git'],
