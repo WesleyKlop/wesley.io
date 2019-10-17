@@ -16,8 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
         includePaths: [path.resolve(__dirname, 'node_modules')],
     })
 
-if (mix.inProduction()) {
-  mix.options({
-    purifyCss: true,
-  })
-}
+// if (mix.inProduction()) {
+//   mix.options({
+//     purifyCss: true,
+//   })
+// }
