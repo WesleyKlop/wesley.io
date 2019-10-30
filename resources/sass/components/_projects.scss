@@ -2,9 +2,9 @@
     display: grid;
     grid-template-rows: auto;
     grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(min-content, 500px));
-    grid-gap: 32px;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 32em));
     grid-auto-flow: row dense;
+    grid-gap: 16px;
     justify-content: space-between;
 
     &__title {
@@ -20,6 +20,7 @@
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     //border-left: 5px solid var(--theme-color);
     padding: 16px;
+    margin-bottom: 16px;
 
     &__flap {
         border-radius: 16px 0 16px 0;

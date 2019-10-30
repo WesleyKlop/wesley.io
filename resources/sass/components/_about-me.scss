@@ -1,0 +1,23 @@
+.about-me {
+    &__content {
+        max-width: 35em;
+    }
+
+    &__links {
+        margin: 0 0 8px 0;
+        padding: 0;
+        list-style-type: none;
+        width: 300px;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        li {
+            display: inline-block;
+
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+}
