@@ -19,7 +19,7 @@
 
   @include('sections.projects')
 
-  @include('sections.skills')
+    @include('sections.skills', ['skills' => $skills])
 
   @include('sections.timeline')
 </main>
