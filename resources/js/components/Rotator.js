@@ -25,7 +25,11 @@ export default class Rotator {
   init = () => {
     this.#innerRotator.appendChild(this.#currItem)
     this.#innerRotator.appendChild(this.#nextItem)
-    this.reset()
+    if (navigator.userAgent.includes('Firefox')) {
+      setTimeout(this.reset, 100)
+    } else {
+      this.reset()
+    }
 
     setTimeout(this.next, 2500)
     window.addEventListener('resize', this.reset)
