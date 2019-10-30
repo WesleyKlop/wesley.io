@@ -1,66 +1,66 @@
 .projects {
-  display: grid;
-  grid-template-rows: auto;
-  grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fill, minmax(min-content, 500px));
-  grid-gap: 32px;
-  grid-auto-flow: row dense;
-  justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(min-content, 500px));
+    grid-gap: 32px;
+    grid-auto-flow: row dense;
+    justify-content: space-between;
 
-  &__title {
-    grid-column: 1 / -1;
-  }
+    &__title {
+        grid-column: 1 / -1;
+    }
 }
 
 
 .projects-item {
 
-  background-color: var(--card-background-color);
-  border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  //border-left: 5px solid var(--theme-color);
-  padding: 16px;
-
-  &__flap {
-    border-radius: 16px 0 16px 0;
-    height: 32px;
-    width: 32px;
-    position: absolute;
-    bottom: 0;
-    right: 0;
     background-color: var(--card-background-color);
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    //border-left: 5px solid var(--theme-color);
+    padding: 16px;
 
-    &:hover {
-      background-color: transparent;
+    &__flap {
+        border-radius: 16px 0 16px 0;
+        height: 32px;
+        width: 32px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: var(--card-background-color);
+
+        &:hover {
+            background-color: transparent;
+        }
     }
-  }
 
-  &.rotated {
-    .projects-item__back {
-      transform: rotateY(0deg);
+    &.rotated {
+        .projects-item__back {
+            transform: rotateY(0deg);
+        }
+
+        .projects-item__front {
+            transform: rotateY(180deg);
+        }
     }
 
-    .projects-item__front {
-      transform: rotateY(180deg);
-    }
-  }
+    &__tech-chips {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 0;
 
-  &__tech-chips {
-    display: flex;
-    flex-flow: row wrap;
-    padding: 0;
-
-    li {
-      display: inline-block;
-      padding: 0 8px;
-      height: 36px;
-      line-height: 36px;
-      background-color: var(--theme-color);
-      border-radius: 18px;
-      min-width: 60px;
-      margin-right: 8px;
-      margin-bottom: 8px;
-      text-align: center;
+        li {
+            display: inline-block;
+            padding: 0 8px;
+            height: 36px;
+            line-height: 36px;
+            background-color: var(--theme-color);
+            border-radius: 18px;
+            min-width: 60px;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
     }
-  }
 }
