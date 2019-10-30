@@ -1,15 +1,15 @@
 @import '../variables';
 
 .rotator {
-  max-width: 100%;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  color: var(--theme-color);
-  font-weight: bold;
+    max-width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: middle;
+    color: var(--theme-color);
+    font-weight: bold;
 
-  &__inner {
-    will-change: transform;
-    white-space: nowrap;
-  }
+    &__inner {
+        will-change: transform;
+        white-space: nowrap;
+    }
 }
