@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use App\Skill;
 use App\YearInReview;
 use Carbon\CarbonImmutable;
@@ -24,10 +25,13 @@ class HomePageController extends Controller
             ->get()
             ->keyBy('year');
 
+        $projects = Project::with('skills')->get();
+
         return view('index', [
             'age' => $birthDate->diffInYears(),
             'skills' => $skills,
             'timeline' => $timelineItems,
+            'projects' => $projects,
         ]);
     }
 }

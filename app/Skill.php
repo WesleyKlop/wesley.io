@@ -40,4 +40,16 @@ class Skill extends Model
     {
         return $this->hasMany(Skill::class, 'parent_id', 'id');
     }
+
+    public function getShortNameAttribute()
+    {
+        // Filter out parentheses
+        $shortName = preg_replace('/ *\(.*\) */', '', $this->name);
+
+        if (strlen($shortName) > 10) {
+            $shortName = preg_replace('/[^A-Z]/', '', $shortName);
+        }
+
+        return $shortName;
+    }
 }

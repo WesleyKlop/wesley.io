@@ -17,7 +17,7 @@
 <main class="page-content">
   @include('sections.about-me')
 
-  @include('sections.projects')
+    @include('sections.projects', ['projects' => $projects])
 
     @include('sections.skills', ['skills' => $skills])
 
