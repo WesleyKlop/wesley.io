@@ -17,7 +17,7 @@ $thickness: 4px;
     grid-area: header;
     display: flex;
     justify-content: space-around;
-    flex-flow: column-reverse nowrap;
+      flex-flow: column nowrap;
     text-align: center;
     position: relative;
   }

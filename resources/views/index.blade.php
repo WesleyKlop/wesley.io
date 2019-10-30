@@ -21,7 +21,7 @@
 
     @include('sections.skills', ['skills' => $skills])
 
-  @include('sections.timeline')
+    @include('sections.timeline', ['timeline' => $timeline])
 </main>
 
 @include('sections.footer')
