@@ -51,9 +51,10 @@ body {
     //text-transform: uppercase;
     text-align: left;
     font-family: 'Nunito', sans-serif;
-    margin: 4px 0;
+    margin: 8px 0 0;
     color: var(--theme-color);
     font-weight: bold;
+    line-height: normal;
 }
 
 .section {
@@ -78,6 +79,10 @@ a {
     &:hover {
         text-decoration: underline;
     }
+}
+
+p {
+    margin-top: 0;
 }
 
 ::selection {

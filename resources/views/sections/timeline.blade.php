@@ -3,7 +3,7 @@
     <div class="timeline__header">
         <div class="timeline__line"></div>
         @foreach($timeline->keys() as $year)
-            <a href="#" class="timeline__button" data-year="{{ $year }}">{{ $year }}</a>
+            <a href="#" class="timeline__button {{ $loop->first ? 'active' : '' }}" data-year="{{ $year }}">{{ $year }}</a>
         @endforeach
     </div>
     <div class="timeline__content">
