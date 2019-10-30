@@ -26,6 +26,5 @@
 
 @include('sections.footer')
 
-{{--@include('components.theme-toggle')--}}
 </body>
 </html>
