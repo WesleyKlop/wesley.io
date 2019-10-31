@@ -18,10 +18,11 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
 
             $table->string('title');
-            $table->string('description');
-            $table->string('url')->nullable();
+            $table->text('description');
+            $table
+                ->string('url')
+                ->nullable();
         });
-        Artisan::call('db:seed', ['--class' => 'ProjectsTableSeeder']);
     }
 
     /**
