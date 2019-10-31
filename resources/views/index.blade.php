@@ -6,7 +6,8 @@
 
     <title>Wesley Klop</title>
     <meta name="description" content="The website of a software developer."/>
-    <meta name="theme-color" content="var(--theme-color)"/>
+    <meta name="theme-color" content="#FBFCFE"/>
+    <link rel="manifest" href="/manifest.json">
 
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>

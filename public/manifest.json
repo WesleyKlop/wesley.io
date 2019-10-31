@@ -1,0 +1,11 @@
+{
+    "short_name": "Wesley",
+    "name": "Wesley Klop",
+    "icons": [
+    ],
+    "start_url": "/",
+    "theme_color": "#6680CC",
+    "display": "standalone",
+    "scope": "/",
+    "background_color": "#FBFCFE"
+}
