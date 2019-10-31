@@ -31,6 +31,7 @@ class SkillTableSeeder extends Seeder
                 'Test Driver Development',
                 'Continuous Integration',
                 'Database theories',
+                'Git',
             ])->map($mapper));
 
         $frontend
