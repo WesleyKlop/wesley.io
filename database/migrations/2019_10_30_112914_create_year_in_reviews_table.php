@@ -18,10 +18,8 @@ class CreateYearInReviewsTable extends Migration
             $table->timestamps();
 
             $table->year('year');
-            $table->string('text');
+            $table->text('text');
         });
-
-        Artisan::call('db:seed', ['--class' => 'YearInReviewTableSeeder']);
     }
 
     /**

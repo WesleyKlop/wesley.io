@@ -28,8 +28,6 @@ class CreateSkillsTable extends Migration
                 ->on('skills')
                 ->onDelete('cascade');
         });
-
-        \Illuminate\Support\Facades\Artisan::call('db:seed', ['--class' => 'SkillTableSeeder']);
     }
 
     /**
