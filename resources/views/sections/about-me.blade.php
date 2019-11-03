@@ -8,9 +8,9 @@
     </p>
     <p>You can connect with me via the following platforms:</p>
     <ul class="about-me__links">
-        <li><a target="_blank" rel="nofollow noreferrer" href="https://github.com/WesleyKlop" class="fab fa-github fa-4x"></a></li>
-        <li><a target="_blank" rel="nofollow noreferrer" href="https://linkedin.com/in/WesleyKlop" class="fab fa-linkedin fa-4x"></a></li>
-        <li><a target="_blank" rel="nofollow noreferrer" href="mailto:wesley19097@gmail.com" class="fas fa-at fa-4x"></a></li>
+        <li><a target="_blank" rel="nofollow noreferrer" href="https://github.com/WesleyKlop" class="fab fa-github fa-4x" aria-label="My Github profile"></a></li>
+        <li><a target="_blank" rel="nofollow noreferrer" href="https://linkedin.com/in/WesleyKlop" class="fab fa-linkedin fa-4x" aria-label="My LinkedIn profile"></a></li>
+        <li><a target="_blank" rel="nofollow noreferrer" href="mailto:wesley19097@gmail.com" class="fas fa-at fa-4x" aria-label="My email address"></a></li>
     </ul>
     <p>
         I'm currently employed as a Software Developer at
