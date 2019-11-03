@@ -29,5 +29,6 @@
 
 @include('sections.footer')
 
+@include('components.analytics')
 </body>
 </html>
