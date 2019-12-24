@@ -1,4 +1,4 @@
-@if(isset(config('app.analytics_id')))
+@if(!empty(config('app.analytics_id')))
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ config('app.analytics_id') }}"></script>
 <script>
