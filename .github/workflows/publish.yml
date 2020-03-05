@@ -1,0 +1,21 @@
+name: Publish Docker Image
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Publish Site to Registry
+        uses: elgohr/Publish-Docker-Github-Action@master
+        with:
+          name: WesleyKlop/wesley.io/site
+          username: ${{ github.actor }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          registry: docker.pkg.github.com
+          dockerfile: Dockerfile
