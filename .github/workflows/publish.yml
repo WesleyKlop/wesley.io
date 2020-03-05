@@ -14,7 +14,7 @@ jobs:
       - name: Publish Site to Registry
         uses: elgohr/Publish-Docker-Github-Action@master
         with:
-          name: WesleyKlop/wesley.io/site
+          name: wesleyklop/wesley.io/site
           username: ${{ github.actor }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           registry: docker.pkg.github.com
