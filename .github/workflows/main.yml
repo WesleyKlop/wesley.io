@@ -1,28 +1,45 @@
 name: Continuous Integration
 on:
-  push:
-    branches:
-      - master
-      - develop
+    push:
+        branches:
+            - master
+            - develop
+    pull_request:
+
 jobs:
-  laravel-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - name: Copy ENV Laravel Configuration for CI
-        run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
-      - name: Install Dependencies (PHP vendors)
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-      - name: Install Dependencies (JS node modules)
-        run: yarn install --frozen-lockfile
-      - name: Generate key
-        run: php artisan key:generate
-      - name: Create DB and schemas
-        run: |
-          mkdir -p database
-          touch database/database.sqlite
-          php artisan migrate:fresh --seed
-      - name: Build frontend
-        run: yarn production
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
-        run: vendor/bin/phpunit
+    test-backend:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Copy .env Laravel Configuration for CI
+              run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+            - name: Install Dependencies (PHP vendors)
+              run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+            - name: Install Dependencies (JS node modules)
+              run: yarn install --frozen-lockfile
+            - name: Generate key
+              run: php artisan key:generate
+            - name: Create DB and schemas
+              run: |
+                  mkdir -p database
+                  touch database/database.sqlite
+                  php artisan migrate:fresh --seed
+            - name: Build frontend
+              run: yarn production
+            - name: Execute tests (Unit and Feature tests) via PHPUnit
+              run: vendor/bin/phpunit
+    build-frontend:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v2
+            - name: Get yarn cache directory path
+              id: yarn-cache-dir-path
+              run: echo "::set-output name=dir::$(yarn cache dir)"
+            - uses: actions/cache@v2
+              with:
+                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+                  restore-keys: |
+                      ${{ runner.os }}-yarn-
+            - run: yarn --frozen-lockfile
+            - run: yarn production
