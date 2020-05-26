@@ -26,7 +26,7 @@ RUN composer dump-autoload --optimize --classmap-authoritative
 FROM php:apache
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
-RUN install-php-extensions opcache
+RUN install-php-extensions opcache pgsql pdo_pgsql bcmath mysqli pdo_mysql
 
 RUN a2enmod rewrite
 
