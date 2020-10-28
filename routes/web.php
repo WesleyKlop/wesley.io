@@ -14,3 +14,5 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomePageController@index')->name('home.index');
+
+\Illuminate\Support\Facades\Auth::routes(['register' => false]);
