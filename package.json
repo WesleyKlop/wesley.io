@@ -3,12 +3,11 @@
     "license": "MIT",
     "scripts": {
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "yarn development --watch",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "watch": "npm run development -- --watch",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prettier": "prettier \"./**/*.{js,scss,json,yml}\"",
-        "lint:fix": "yarn prettier --write",
-        "lint:check": "yarn prettier --check"
+        "lint:fix": "npm run prettier --  --write",
+        "lint:check": "npm run prettier -- --check"
     },
     "devDependencies": {
         "@babel/plugin-proposal-class-properties": "^7.5.5",
