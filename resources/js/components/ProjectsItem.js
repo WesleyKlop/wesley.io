@@ -1,20 +1,20 @@
 export default class ProjectsItem {
-    #element
+  #element
 
-    constructor(element) {
-        this.#element = element
-        this.init()
-    }
+  constructor(element) {
+    this.#element = element
+    this.init()
+  }
 
-    static initAll = () =>
-        [...document.querySelectorAll('.projects-item')].map(
-            (el) => new ProjectsItem(el),
-        )
+  static initAll = () =>
+    [...document.querySelectorAll('.projects-item')].map(
+      (el) => new ProjectsItem(el),
+    )
 
-    init = () => {
-        this.#element.addEventListener('click', (e) => {
-            e.preventDefault()
-            this.#element.classList.toggle('rotated')
-        })
-    }
+  init = () => {
+    this.#element.addEventListener('click', (e) => {
+      e.preventDefault()
+      this.#element.classList.toggle('rotated')
+    })
+  }
 }

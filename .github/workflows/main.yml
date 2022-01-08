@@ -1,77 +1,77 @@
 name: Continuous Integration
 
 on:
-    push:
-        branches:
-            - main
-    pull_request:
+  push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
-    lint:
-        name: Lint code
-        runs-on: ubuntu-20.04
-        steps:
-            - uses: actions/checkout@v2
-            - name: Get Node version
-              id: node-version
-              run: echo "::set-output name=node-version::$(cat .nvmrc)"
-            - uses: actions/setup-node@v2
-              with:
-                  node-version: ${{ steps.node-version.outputs.node-version }}
-            - uses: actions/cache@v2.1.4
-              with:
-                  path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
-            - run: npm ci
-            - run: npm run lint:check
+  lint:
+    name: Lint code
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Node version
+        id: node-version
+        run: echo "::set-output name=node-version::$(cat .nvmrc)"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.node-version.outputs.node-version }}
+      - uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      - run: npm run lint:check
 
-    test-backend:
-        needs: [lint]
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Copy .env Laravel Configuration for CI
-              run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
-            - name: Get Composer Cache Directory
-              id: composer-cache
-              run: |
-                  echo "::set-output name=dir::$(composer config cache-files-dir)"
-            - uses: actions/cache@v2.0.0
-              with:
-                  path: ${{ steps.composer-cache.outputs.dir }}
-                  key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
-                  restore-keys: |
-                      ${{ runner.os }}-composer-
-            - name: Install Dependencies (PHP vendors)
-              run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
-            - name: Generate key
-              run: php artisan key:generate
-            - name: Create DB and schemas
-              run: |
-                  mkdir -p database
-                  touch database/database.sqlite
-                  php artisan migrate:fresh --seed
-            - name: Execute tests (Unit and Feature tests) via PHPUnit
-              run: vendor/bin/phpunit
+  test-backend:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Copy .env Laravel Configuration for CI
+        run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+      - uses: actions/cache@v2.0.0
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+      - name: Install Dependencies (PHP vendors)
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Generate key
+        run: php artisan key:generate
+      - name: Create DB and schemas
+        run: |
+          mkdir -p database
+          touch database/database.sqlite
+          php artisan migrate:fresh --seed
+      - name: Execute tests (Unit and Feature tests) via PHPUnit
+        run: vendor/bin/phpunit
 
-    build-frontend:
-        needs: [lint]
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - name: Get Node version
-              id: node-version
-              run: echo "::set-output name=node-version::$(cat .nvmrc)"
-            - uses: actions/setup-node@v2
-              with:
-                  node-version: ${{ steps.node-version.outputs.node-version }}
-            - uses: actions/cache@v2.1.4
-              with:
-                  path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-                  restore-keys: |
-                      ${{ runner.os }}-node-
-            - run: npm ci
-            - run: npm run production
+  build-frontend:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get Node version
+        id: node-version
+        run: echo "::set-output name=node-version::$(cat .nvmrc)"
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ steps.node-version.outputs.node-version }}
+      - uses: actions/cache@v2.1.4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm ci
+      - run: npm run production
