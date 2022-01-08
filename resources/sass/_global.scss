@@ -7,7 +7,6 @@
     --card-background-color: #{$card-background-color};
 }
 
-//noinspection CssInvalidMediaFeature
 @media (prefers-color-scheme: dark) {
     :root:not(.light-theme) {
         --theme-color: #{$theme-color-dark};
