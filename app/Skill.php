@@ -4,15 +4,9 @@ declare(strict_types=1);
 
 namespace App;
 
-use Eloquent;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-/**
- * Class Skill
- * @package App
- * @mixin Eloquent
- */
 class Skill extends Model
 {
     public $timestamps = false;
