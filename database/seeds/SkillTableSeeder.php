@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Skill;
 use Illuminate\Database\Seeder;
 
@@ -7,20 +9,28 @@ class SkillTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
-        $general = Skill::create(['name' => 'General']);
-        $frontend = Skill::create(['name' => 'Frontend']);
-        $backend = Skill::create(['name' => 'Backend']);
-        $databases = Skill::create(['name' => 'Databases']);
-        $systems = Skill::create(['name' => 'Systems']);
+        $general = Skill::create([
+            'name' => 'General',
+        ]);
+        $frontend = Skill::create([
+            'name' => 'Frontend',
+        ]);
+        $backend = Skill::create([
+            'name' => 'Backend',
+        ]);
+        $databases = Skill::create([
+            'name' => 'Databases',
+        ]);
+        $systems = Skill::create([
+            'name' => 'Systems',
+        ]);
 
-        $mapper = function (string $item) {
-            return ['name' => $item];
-        };
+        $mapper = fn (string $item) => [
+            'name' => $item,
+        ];
 
         $general
             ->children()
@@ -76,20 +86,28 @@ class SkillTableSeeder extends Seeder
 
         Skill
             ::where('name', 'CSS')
-            ->firstOrFail()
-            ->children()
-            ->createMany([
-                ['name' => 'SCSS'],
-                ['name' => 'PostCSS'],
-            ]);
+                ->firstOrFail()
+                ->children()
+                ->createMany([
+                    [
+                        'name' => 'SCSS',
+                    ],
+                    [
+                        'name' => 'PostCSS',
+                    ],
+                ]);
 
         Skill
             ::where('name', 'Node.js')
-            ->firstOrFail()
-            ->children()
-            ->createMany([
-                ['name' => 'Express'],
-                ['name' => 'Meteor'],
-            ]);
+                ->firstOrFail()
+                ->children()
+                ->createMany([
+                    [
+                        'name' => 'Express',
+                    ],
+                    [
+                        'name' => 'Meteor',
+                    ],
+                ]);
     }
 }

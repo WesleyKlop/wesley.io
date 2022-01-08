@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Project;
@@ -16,14 +18,14 @@ class HomePageController extends Controller
 
         $skills = Skill
             ::root()
-            ->with('allChildren')
-            ->get();
+                ->with('allChildren')
+                ->get();
 
         $timelineItems = YearInReview
             ::orderByDesc('year')
-            ->take(5)
-            ->get()
-            ->keyBy('year');
+                ->take(5)
+                ->get()
+                ->keyBy('year');
 
         $projects = Project::with('skills')->get();
 
