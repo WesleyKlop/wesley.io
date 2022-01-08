@@ -16,21 +16,21 @@ class HomePageController extends Controller
     {
         $birthDate = CarbonImmutable::createFromDate(1997, 12, 29);
 
-        $skills = Skill
-            ::root()
-                ->with('allChildren')
-                ->get();
+        $skills = Skill::query()
+            ->root()
+            ->with('allChildren')
+            ->get();
 
-        $timelineItems = YearInReview
-            ::orderByDesc('year')
-                ->take(5)
-                ->get()
-                ->keyBy('year');
+        $timelineItems = YearInReview::query()
+            ->orderByDesc('year')
+            ->take(5)
+            ->get()
+            ->keyBy('year');
 
-        $projects = Project::with('skills')->get();
+        $projects = Project::query()->with('skills')->get();
 
         return view('index', [
-            'age' => $birthDate->diffInYears(),
+            'age' => $birthDate->age,
             'skills' => $skills,
             'timeline' => $timelineItems,
             'projects' => $projects,

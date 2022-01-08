@@ -11,7 +11,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
 
     $containerConfigurator->import(LevelSetList::UP_TO_PHP_74);
-    $containerConfigurator->import(LaravelLevelSetList::UP_TO_LARAVEL_60);
+    $containerConfigurator->import(LaravelLevelSetList::UP_TO_LARAVEL_70);
 
     $parameters->set(Option::PATHS, [
         __DIR__ . '/app',
