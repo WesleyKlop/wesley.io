@@ -1,4 +1,3 @@
-// Map items to year => element
 import Rotator from './components/Rotator'
 
 const timelineItems = [...document.querySelectorAll('.timeline__item')].reduce(
@@ -28,6 +27,8 @@ Object.values(timelineButtons).forEach((el) =>
 new Rotator(document.querySelector('.rotator'), [
   'software developer',
   'student',
+  'automator',
+  'ci/cd enthusiast',
   'frontender',
   'nerd',
 ])
