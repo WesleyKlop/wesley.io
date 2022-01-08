@@ -2,13 +2,23 @@
 
 declare(strict_types=1);
 
-/** @var Factory $factory */
+namespace Database\Factories;
 
 use App\YearInReview;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Factory;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Carbon;
 
-$factory->define(YearInReview::class, fn (Faker $faker) => [
-    'year' => $faker->year,
-    'text' => $faker->realText(),
-]);
+class YearInReviewFactory extends Factory
+{
+    protected $model = YearInReview::class;
+
+    public function definition(): array
+    {
+        return [
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+            'year' => $this->faker->randomNumber(),
+            'text' => $this->faker->realText(),
+        ];
+    }
+}

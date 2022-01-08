@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\YearInReview;
 use Illuminate\Database\Seeder;
 
@@ -10,7 +12,7 @@ class YearInReviewTableSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         collect([2014, 2015, 2016, 2017, 2018])->each(fn (int $year) => factory(YearInReview::class)->create([
             'year' => $year,

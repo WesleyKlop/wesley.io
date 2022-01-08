@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\Skill;
 use Illuminate\Database\Seeder;
 
@@ -10,7 +12,7 @@ class SkillTableSeeder extends Seeder
     /**
      * Run the database seeds.
      */
-    public function run()
+    public function run(): void
     {
         $general = Skill::create([
             'name' => 'General',
@@ -84,30 +86,30 @@ class SkillTableSeeder extends Seeder
                 'Docker (and compose)',
             ])->map($mapper));
 
-        Skill
-            ::where('name', 'CSS')
-                ->firstOrFail()
-                ->children()
-                ->createMany([
-                    [
-                        'name' => 'SCSS',
-                    ],
-                    [
-                        'name' => 'PostCSS',
-                    ],
-                ]);
+        Skill::query()
+            ->where('name', 'CSS')
+            ->firstOrFail()
+            ->children()
+            ->createMany([
+                [
+                    'name' => 'SCSS',
+                ],
+                [
+                    'name' => 'PostCSS',
+                ],
+            ]);
 
-        Skill
-            ::where('name', 'Node.js')
-                ->firstOrFail()
-                ->children()
-                ->createMany([
-                    [
-                        'name' => 'Express',
-                    ],
-                    [
-                        'name' => 'Meteor',
-                    ],
-                ]);
+        Skill::query()
+            ->where('name', 'Node.js')
+            ->firstOrFail()
+            ->children()
+            ->createMany([
+                [
+                    'name' => 'Express',
+                ],
+                [
+                    'name' => 'Meteor',
+                ],
+            ]);
     }
 }
