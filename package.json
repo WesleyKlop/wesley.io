@@ -2,22 +2,21 @@
     "private": true,
     "license": "MIT",
     "scripts": {
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "yarn development --watch",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "development": "mix",
+        "watch": "mix watch",
+        "hot": "mix watch --hot",
+        "production": "mix --production",
         "prettier": "prettier \"./**/*.{js,scss,json,yml}\"",
-        "lint:fix": "yarn prettier --write",
-        "lint:check": "yarn prettier --check"
+        "lint:fix": "npm run prettier --  --write",
+        "lint:check": "npm run prettier -- --check"
     },
     "devDependencies": {
-        "@babel/plugin-proposal-class-properties": "^7.5.5",
         "cross-env": "^7.0.2",
-        "laravel-mix": "^5.0.0",
+        "laravel-mix": "^6.0.39",
         "prettier": "^2.0.5",
-        "resolve-url-loader": "^3.1.0",
+        "resolve-url-loader": "^4.0.0",
         "sass": "^1.15.2",
-        "sass-loader": "^8.0.0",
+        "sass-loader": "^12.0.0",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {

@@ -1,18 +1,18 @@
 .skills {
-    display: grid;
-    grid-template-rows: auto auto;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(auto-fill, minmax(min-content, 350px));
-    grid-gap: 16px;
-    grid-auto-flow: row dense;
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 350px));
+  grid-gap: 16px;
+  grid-auto-flow: row dense;
 
-    &__title {
-        grid-column: 1 / -1;
-    }
+  &__title {
+    grid-column: 1 / -1;
+  }
 
-    &__description {
-        grid-column: 1 / -1;
-    }
+  &__description {
+    grid-column: 1 / -1;
+  }
 }
 
 .skills-column {

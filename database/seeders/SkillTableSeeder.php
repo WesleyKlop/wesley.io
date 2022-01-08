@@ -1,5 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
+namespace Database\Seeders;
+
 use App\Skill;
 use Illuminate\Database\Seeder;
 
@@ -7,20 +11,28 @@ class SkillTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
-    public function run()
+    public function run(): void
     {
-        $general = Skill::create(['name' => 'General']);
-        $frontend = Skill::create(['name' => 'Frontend']);
-        $backend = Skill::create(['name' => 'Backend']);
-        $databases = Skill::create(['name' => 'Databases']);
-        $systems = Skill::create(['name' => 'Systems']);
+        $general = Skill::create([
+            'name' => 'General',
+        ]);
+        $frontend = Skill::create([
+            'name' => 'Frontend',
+        ]);
+        $backend = Skill::create([
+            'name' => 'Backend',
+        ]);
+        $databases = Skill::create([
+            'name' => 'Databases',
+        ]);
+        $systems = Skill::create([
+            'name' => 'Systems',
+        ]);
 
-        $mapper = function (string $item) {
-            return ['name' => $item];
-        };
+        $mapper = fn (string $item) => [
+            'name' => $item,
+        ];
 
         $general
             ->children()
@@ -74,22 +86,30 @@ class SkillTableSeeder extends Seeder
                 'Docker (and compose)',
             ])->map($mapper));
 
-        Skill
-            ::where('name', 'CSS')
+        Skill::query()
+            ->where('name', 'CSS')
             ->firstOrFail()
             ->children()
             ->createMany([
-                ['name' => 'SCSS'],
-                ['name' => 'PostCSS'],
+                [
+                    'name' => 'SCSS',
+                ],
+                [
+                    'name' => 'PostCSS',
+                ],
             ]);
 
-        Skill
-            ::where('name', 'Node.js')
+        Skill::query()
+            ->where('name', 'Node.js')
             ->firstOrFail()
             ->children()
             ->createMany([
-                ['name' => 'Express'],
-                ['name' => 'Meteor'],
+                [
+                    'name' => 'Express',
+                ],
+                [
+                    'name' => 'Meteor',
+                ],
             ]);
     }
 }
