@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 set -e
 
-source .env
+if test -f ".env"; then
+    source .env
+fi
 
 if [ -z "$APP_KEY" ]; then
-    echo "No application key found, setting and then exiting. Please start again.";
-    php artisan key:generate
-    exit 1;
+    echo >&2 "No application key found, exiting."
+    exit 1
 fi
 
 php artisan storage:link
