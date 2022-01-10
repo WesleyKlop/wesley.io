@@ -15,7 +15,7 @@ class YearInReviewTableSeeder extends Seeder
     public function run(): void
     {
         if (app()->environment('local')) {
-            collect([2014, 2015, 2016, 2017, 2018])->each(fn(int $year) => YearInReview::factory()->create([
+            collect([2014, 2015, 2016, 2017, 2018])->each(fn (int $year) => YearInReview::factory()->create([
                 'year' => $year,
             ]));
         }
