@@ -12,7 +12,7 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.2",
-        "laravel-mix": "^6.0.39",
+        "laravel-mix": "^6.0.41",
         "prettier": "^2.0.5",
         "resolve-url-loader": "^5.0.0",
         "sass": "^1.48.0",
