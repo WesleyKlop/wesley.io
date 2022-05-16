@@ -15,7 +15,7 @@ jobs:
       - name: Get Node version
         id: node-version
         run: echo "::set-output name=node-version::$(cat .nvmrc)"
-      - uses: actions/setup-node@v3.1.1
+      - uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
       - uses: actions/cache@v3
@@ -64,7 +64,7 @@ jobs:
       - name: Get Node version
         id: node-version
         run: echo "::set-output name=node-version::$(cat .nvmrc)"
-      - uses: actions/setup-node@v3.1.1
+      - uses: actions/setup-node@v3.2.0
         with:
           node-version: ${{ steps.node-version.outputs.node-version }}
       - uses: actions/cache@v3
