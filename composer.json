@@ -21,7 +21,7 @@
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.0",
-        "rector/rector": "^0.12.12",
+        "rector/rector": "^0.13.0",
         "symplify/easy-coding-standard": "^10.0"
     },
     "config": {
