@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60b3fab0a0b3e50465c82eff085aa9f1",
+    "content-hash": "936561d1b0e99f36c52facc877d4c997",
     "packages": [
         {
             "name": "brick/math",
@@ -8075,16 +8075,16 @@
         },
         {
             "name": "symplify/easy-coding-standard",
-            "version": "10.3.3",
+            "version": "11.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "c93878b3c052321231519b6540e227380f90be17"
+                "reference": "9d79172220c64742543ddc0e3269d7d0eb2ecbd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/c93878b3c052321231519b6540e227380f90be17",
-                "reference": "c93878b3c052321231519b6540e227380f90be17",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/9d79172220c64742543ddc0e3269d7d0eb2ecbd1",
+                "reference": "9d79172220c64742543ddc0e3269d7d0eb2ecbd1",
                 "shasum": ""
             },
             "require": {
@@ -8114,7 +8114,7 @@
             ],
             "description": "Prefixed scoped version of ECS package",
             "support": {
-                "source": "https://github.com/symplify/easy-coding-standard/tree/10.3.3"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/11.0.4"
             },
             "funding": [
                 {
@@ -8126,7 +8126,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-06-13T14:03:37+00:00"
+            "time": "2022-06-20T12:40:20+00:00"
         },
         {
             "name": "theseer/tokenizer",
