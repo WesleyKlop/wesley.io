@@ -23,7 +23,7 @@ COPY . .
 RUN composer dump-autoload -a
 
 # Build app image
-FROM php:8.2.0beta3-apache
+FROM php:8.2.0RC1-apache
 
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/bin/
 RUN install-php-extensions opcache pgsql pdo_pgsql bcmath mysqli pdo_mysql
