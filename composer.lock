@@ -7894,16 +7894,16 @@
         },
         {
             "name": "symplify/easy-coding-standard",
-            "version": "11.1.29.72",
+            "version": "11.2.0.72",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symplify/easy-coding-standard.git",
-                "reference": "d2ab6b21f11ee10c026f67f093f201aaa9b46629"
+                "reference": "be31d9b6927ef9d06c0475a66b785a79de408630"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/d2ab6b21f11ee10c026f67f093f201aaa9b46629",
-                "reference": "d2ab6b21f11ee10c026f67f093f201aaa9b46629",
+                "url": "https://api.github.com/repos/symplify/easy-coding-standard/zipball/be31d9b6927ef9d06c0475a66b785a79de408630",
+                "reference": "be31d9b6927ef9d06c0475a66b785a79de408630",
                 "shasum": ""
             },
             "require": {
@@ -7929,7 +7929,7 @@
             "description": "Use Coding Standard with 0-knowledge of PHP-CS-Fixer and PHP_CodeSniffer",
             "support": {
                 "issues": "https://github.com/symplify/easy-coding-standard/issues",
-                "source": "https://github.com/symplify/easy-coding-standard/tree/11.1.29.72"
+                "source": "https://github.com/symplify/easy-coding-standard/tree/11.2.0.72"
             },
             "funding": [
                 {
@@ -7941,7 +7941,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-02T17:54:31+00:00"
+            "time": "2023-01-09T16:44:48+00:00"
         },
         {
             "name": "theseer/tokenizer",
