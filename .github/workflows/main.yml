@@ -11,7 +11,7 @@ jobs:
     name: Lint code
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get Node version
         id: node-version
         run: echo "::set-output name=node-version::$(cat .nvmrc)"
@@ -31,7 +31,7 @@ jobs:
     needs: [lint]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Copy .env Laravel Configuration for CI
         run: php -r "file_exists('.env') || copy('.env.ci', '.env');"
       - name: Get Composer Cache Directory
@@ -60,7 +60,7 @@ jobs:
     needs: [lint]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Get Node version
         id: node-version
         run: echo "::set-output name=node-version::$(cat .nvmrc)"
