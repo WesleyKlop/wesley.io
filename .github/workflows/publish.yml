@@ -46,7 +46,7 @@ jobs:
             {{major}}.{{minor}}
             {{major}}
       - name: Build and push docker image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
