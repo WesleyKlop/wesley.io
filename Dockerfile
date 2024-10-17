@@ -1,4 +1,4 @@
-FROM node:22-alpine as front-builder
+FROM node:23-alpine as front-builder
 WORKDIR /app
 
 COPY package.json package-lock.json webpack.mix.js artisan ./
